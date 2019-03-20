@@ -18,7 +18,7 @@ class Board extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      squares: Array(9).fill(null),
+      squares: Array(9).fill(null),    
       xIsNext: true,
     };
   }
@@ -28,6 +28,7 @@ class Board extends React.Component {
     if(calculateWinner(squares) || squares[i]){
       return;
     }
+    
     squares[i] = this.state.xIsNext ? 'X' : 'O';
     this.setState({
       squares: squares,
